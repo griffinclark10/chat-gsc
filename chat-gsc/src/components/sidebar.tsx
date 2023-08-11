@@ -1,9 +1,13 @@
+'use client';
 import SidebarElement from "./sideElement";
 import { faGithub, faLinkedin } from "../../node_modules/@fortawesome/free-brands-svg-icons/index";
 import { faEnvelope, faFilePdf } from "../../node_modules/@fortawesome/free-solid-svg-icons/index";
 import { FontAwesomeIcon } from "../../node_modules/@fortawesome/react-fontawesome/index";
+import { useCallback, useState } from "react";
 
 const Sidebar: React.FC = () => {
+    const [hideSidebar, setHideSidebar] = useState<boolean>(false);
+    // const toggleSidebar = useCallback(() => setHideSidebar(value => !value));
     return (
         <div className="flex flex-col min-w-[250px] h-screen px-3 py-4 overflow-y-auto bg-teal-900 dark:bg-gray-800">
             <div className="mb-1 flex flex-row gap-2">
