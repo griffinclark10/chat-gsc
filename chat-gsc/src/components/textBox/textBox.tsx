@@ -3,7 +3,7 @@
 const TextBox: React.FC = () => {
     // const [inputValue, setInputValue] = useState<string>('');
     return (
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center p-5">
             <div className="bg-slate-100 p-4 w-full max-w-2xl border-black rounded-md shadow-lg flex">
                 <input type="text" placeholder="Ask a question about Griffin..." className="w-full bg-slate-100 border-transparent focus:border-transparent focus:ring-0 outline-none text-sm" />
                 <button className="p-1 rounded-md text-zinc-300">
