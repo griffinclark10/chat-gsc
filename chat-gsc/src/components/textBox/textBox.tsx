@@ -1,11 +1,13 @@
 // import React, { useState } from 'react';
 
-const TextBox: React.FC = () => {
-    // const [inputValue, setInputValue] = useState<string>('');
+import { TypeAnimation } from "react-type-animation";
+
+const TextBox = (props: { sequenceArray: (string | number | ((element: HTMLElement | null) => void | Promise<void>))[]; allowQuestions: boolean; }) => {
     return (
         <div className="flex flex-col justify-center items-center p-5">
             <div className="bg-slate-100 p-4 w-full max-w-2xl border-black rounded-md shadow-lg flex">
-                <input type="text" placeholder="Ask a question about Griffin..." className="w-full bg-slate-100 border-transparent focus:border-transparent focus:ring-0 outline-none text-sm" />
+                {props.allowQuestions ? <input type="text" placeholder="Ask a question about Griffin..." className="w-full bg-slate-100 border-transparent focus:border-transparent focus:ring-0 outline-none text-sm" /> : <TypeAnimation className="w-full bg-slate-100 border-transparent focus:border-transparent focus:ring-0 outline-none text-sm" sequence={props.sequenceArray} repeat={Infinity}/>}
+                
                 <button className="p-1 rounded-md text-zinc-300">
                     <span className="" data-state="closed">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" className="h-4 w-4 m-1 md:m-0" stroke-width="2">

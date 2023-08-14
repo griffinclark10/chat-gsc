@@ -23,7 +23,18 @@ export default function Home() {
           </div>
         </div>
         <div className='flex-grow'></div> 
-        <TextBox />
+        <TextBox allowQuestions={false} sequenceArray={[2000, "What does Griffin do in his time off?", 1000,
+          "What kind of computer languages does Griffin know? Give project examples with each.",
+          1000,
+          "What are some of Griffin's soft skills?",
+          1000,
+          "How many years of experience does Griffin have using TypeScript and React?",
+          1000,
+          "Where is Griffin's favourite vacation spot?",
+          1000,
+          "What does Griffin most value in a job?",
+          1000,
+          "What are some of Griffin's 10-year career goals?"]} />
       </main>
     </div>
   )
