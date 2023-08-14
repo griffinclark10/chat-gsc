@@ -1,7 +1,7 @@
 'use client';
 import Header from "@/components/Header";
-import Sidebar from "@/components/sidebar";
-import TextBox from "@/components/textBox/textBox";
+import Sidebar from "@/components/Sidebar";
+import TextBox from "@/components/TextBox";
 import { useCallback, useState } from "react";
 
 export default function Home() {
@@ -10,7 +10,6 @@ export default function Home() {
   return (
     <div className="flex h-screen w-screen">
       {<Sidebar hidden={hideSidebar} onClick={toggleSidebar}/> }
-      {/* <Sidebar /> */}
       <main className="flex flex-col w-full h-screen bg-gray-50">
         {<Header showing={hideSidebar} onClick={toggleSidebar} />  }
         <div className='flex-grow'></div>

@@ -1,7 +1,7 @@
-import SidebarElement from "./sideElement";
-import { faGithub, faLinkedin } from "../../node_modules/@fortawesome/free-brands-svg-icons/index";
-import { faEnvelope, faFilePdf } from "../../node_modules/@fortawesome/free-solid-svg-icons/index";
-import { FontAwesomeIcon } from "../../node_modules/@fortawesome/react-fontawesome/index";
+import SidebarElement from "./SidebarElement";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope, faFilePdf } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MouseEventHandler } from "react";
 
 const Sidebar = (props: { onClick: MouseEventHandler<HTMLAnchorElement> | undefined; hidden: boolean }) => {
