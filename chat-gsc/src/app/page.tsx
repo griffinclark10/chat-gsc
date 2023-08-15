@@ -3,10 +3,10 @@ import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import TextBox from "@/components/TextBox";
 import { useCallback, useState } from "react";
-import AboutMe from "../../pages/AboutMe";
-import HomePage from "../../pages/HomePage";
+import AboutMe from "./about/page";
+import HomePage from "./home/page";
 
-export default function Home() {
+export default function Home({children,}:{children: React.ReactNode}) {
   const [hideSidebar, setHideSidebar] = useState<boolean>(false);
   const toggleSidebar = useCallback(() => setHideSidebar(value => !value), []);
   return (
@@ -14,8 +14,7 @@ export default function Home() {
       {<Sidebar hidden={hideSidebar} onClick={toggleSidebar}/> }
       <main className="flex flex-col w-full h-screen bg-gray-50">
         {<Header showing={hideSidebar} onClick={toggleSidebar} />  }
-        {/* <HomePage /> */}
-        <AboutMe />
+        {children}
       </main>
     </div>
   )
