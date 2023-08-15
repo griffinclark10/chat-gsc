@@ -24,8 +24,8 @@ const Sidebar = (props: { onClick: MouseEventHandler<HTMLAnchorElement>; hidden:
             <ul className="space-y-2 font-medium">
                 <SidebarElement text="Home" href="/home" />
                 <SidebarElement text="About Me" href="/about" />
-                <SidebarElement text="Experience" href="#" />
-                <SidebarElement text="Projects" href="#" />
+                <SidebarElement text="Experience" href="/experience" />
+                <SidebarElement text="Projects" href="/projects" />
             </ul>
             <div className="flex-grow" />
             <div className="mb-1 flex flex-row gap-3 justify-center">

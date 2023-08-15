@@ -4,9 +4,9 @@ import TextBox from "@/components/TextBox"
 import Typewriter from "@/components/TypeWriter"
 import Home from "../page"
 
-const Experience = () => {
-    const Q: string = "Tell me about some of Griffin's relevant experience!";
-    const A: string[] = ["Experience"];
+const Projects = () => {
+    const Q: string = "Show me some of the projects Griffin has worked on!";
+    const A: string[] = ["projects!"];
     return (
         <Home>
             <Response question={Q}>
@@ -16,10 +16,10 @@ const Experience = () => {
             </Response>
             <div className='flex-grow'></div>
             <TextBox allowQuestions={false}>
-                <Typewriter text={"Tell me about some of Griffin's relevant experience!"} typeDelay={20} startDelay={1000}/> 
+                <Typewriter text={"Show me some of the projects Griffin has worked on!"} typeDelay={20} startDelay={1000}/> 
             </TextBox>
         </Home>
     )
 }
 
-export default Experience
+export default Projects
