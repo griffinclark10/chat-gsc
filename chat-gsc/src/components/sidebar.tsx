@@ -4,7 +4,7 @@ import { faEnvelope, faFilePdf } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MouseEventHandler } from "react";
 
-const Sidebar = (props: { onClick: MouseEventHandler<HTMLAnchorElement> | undefined; hidden: boolean }) => {
+const Sidebar = (props: { onClick: MouseEventHandler<HTMLAnchorElement>; hidden: boolean }) => {
     return (
         <div className={`flex flex-col ${props.hidden ? 'w-0' : 'w-[300px] px-3 py-4'} h-screen overflow-y-auto bg-teal-900 dark:bg-gray-800 transition-all duration-1000`}>
             <div className="mb-1 flex flex-row gap-2">

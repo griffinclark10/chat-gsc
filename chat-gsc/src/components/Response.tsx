@@ -9,12 +9,7 @@ import Typewriter from "./TypeWriter"
 - Make mouse animation
  */
 
-interface ResponseProps {
-    question: string;
-    answer: string[];
-}
-
-const Response: React.FC<ResponseProps> = ({ question, answer }) => {
+const Response = ({ question, answer }: { question: string; answer: string[]; }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const lastTypewriterRef = useRef<HTMLSpanElement>(null);
 

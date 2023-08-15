@@ -1,10 +1,9 @@
 "use client";
 import TextBox from '@/components/TextBox';
-import type { NextPage } from 'next';
 import { TypeAnimation } from 'react-type-animation';
 import Home from '../page';
 
-const HomePage: NextPage = () => {
+const HomePage = ({}) => {
   const sequenceArray = [2000, "What does Griffin do in his time off?", 1000,
     "What kind of computer languages does Griffin know? Give project examples with each.",
     1000,

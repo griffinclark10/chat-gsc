@@ -1,12 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'; 
 
-interface TypewriterProps {
-    text: string;
-    startDelay?: number;
-    typeDelay: number;
-}  
-
-const Typewriter: React.FC<TypewriterProps> = ({ text, startDelay = 1000, typeDelay }) => {
+const Typewriter= ({ text, startDelay = 1000, typeDelay }: { text: string; startDelay?: number; typeDelay: number; }) => {
     const [currentText, setCurrentText] = useState('');
     const [currentIndex, setCurrentIndex] = useState(0);
     const [shouldStartTyping, setShouldStartTyping] = useState(false);
