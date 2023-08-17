@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from 'react'; 
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import { Remark } from 'react-remark';
 
-const Typewriter = ({ text, startDelay = 2000, typeDelay, setQuestionFinished, questionPosted, setButtonEffect }:
+const Typewriter = ({ text, startDelay = 0, typeDelay, newText, setQuestionFinished, setButtonEffect, onComplete }:
     {
         text: string;
         startDelay?: number;
         typeDelay: number;
         setQuestionFinished?: (val: boolean) => void;
-        questionPosted?: boolean;
         setButtonEffect?: (val: boolean) => void;
+        onComplete?: () => void;
+        newText?: JSX.Element;
     }) => {
     
     const [currentText, setCurrentText] = useState('');
     const [currentIndex, setCurrentIndex] = useState(0);
     const [shouldStartTyping, setShouldStartTyping] = useState(false);
-    
 
 
     useEffect(() => {
@@ -24,6 +27,7 @@ const Typewriter = ({ text, startDelay = 2000, typeDelay, setQuestionFinished, q
 
         return () => clearTimeout(startTimeout);
     }, [startDelay]);
+
 
     useEffect(() => {
         // This useEffect handles the typing effect
@@ -37,7 +41,16 @@ const Typewriter = ({ text, startDelay = 2000, typeDelay, setQuestionFinished, q
         }
     }, [shouldStartTyping, currentIndex, typeDelay, text]);
 
+
     useEffect(() => {
+        if (onComplete && currentText.length === text.length) {
+            setTimeout(() => {
+                if (onComplete) {
+                   onComplete();
+                }
+            }, 500);
+
+        }
         if (setQuestionFinished && setButtonEffect && currentText.length === text.length) {
             setTimeout(() => {
                 setButtonEffect(true);
@@ -49,8 +62,9 @@ const Typewriter = ({ text, startDelay = 2000, typeDelay, setQuestionFinished, q
         }
     }, [currentText])
     
+    return <Remark>{currentText}</Remark>
     
-    return <span>{currentText}</span>;
+    // return <span className='text-sm'>{currentText}</span>;
 };
   
 

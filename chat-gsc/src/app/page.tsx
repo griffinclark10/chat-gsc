@@ -1,10 +1,7 @@
 'use client';
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
-import TextBox from "@/components/TextBox";
 import { useCallback, useState } from "react";
-import AboutMe from "./about/page";
-import HomePage from "./home/page";
 
 export default function Home({children,}:{children: React.ReactNode}) {
   const [hideSidebar, setHideSidebar] = useState<boolean>(false);
