@@ -9,7 +9,7 @@ import { useState } from "react";
 import Home from "../page"
 
 const question = "Tell me about some of Griffin's relevant experience!";
-const answers = `
+const answer = `
 Of course! Here is a list of Griffin's relevant professional experience.
 \n
 \n
@@ -25,6 +25,8 @@ Of course! Here is a list of Griffin's relevant professional experience.
 - Regularly provided the board with weekly progress updates, exemplifying a strong commitment to meeting deadlines
 - Acted as the primary technical consultant for a mid-size firm, addressing domain complications and bug resolutions, while executing web page redesigns utilizing Wordpress, Hubspot, and Namecheap.
 `;
+
+// const answers = ["Of course! Here is a list of Griffin's relevant professional experience.", ""]
 
 const customAnswer: customAnswerElement = {
         text: "Of course! Here is a list of Griffin's relevant professional experience.Dealsourcing - Full Stack Engineer",
@@ -56,7 +58,7 @@ const Experience = () => {
                 setQuestionPosted={setQuestionPosted} question={question}>
                 <TypeWriterJSX elementData={customAnswer} typeDelay={5} startDelay={5000}/>
                 {/* <p>
-                    <Typewriter text={answers} newText={answerElement} typeDelay={5} startDelay={5000} onComplete={handleTypingComplete}/>
+                    <Typewriter text={answers} typeDelay={5} startDelay={5000} onComplete={handleTypingComplete}/>
                     <br /><br />
                     {answers.slice(1, activeTypewriterIndex + 1).map((text, index) => (
                         <>
