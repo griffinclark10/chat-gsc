@@ -2,17 +2,19 @@ import { useEffect, useState } from "react";
 import { EnumType } from "typescript";
 import { customAnswerElement } from "@/types";
 
-const TypeWriterJSX = ({ elementData, typeDelay, startDelay }: {
+const TypeWriterJSX = ({ elementData, typeDelay, startDelay, onComplete }: {
     elementData: customAnswerElement;
     typeDelay: number;
     startDelay: number;
+    onComplete: () => void;
 }) => {
     
     const [currentIndex, setCurrentIndex] = useState(0);
     const [currentText, setCurrentText] = useState('');
     const [shouldStartTyping, setShouldStartTyping] = useState(false);
+    const currentSegment = elementData.segments[currentIndex];
 
-    console.log("Current Index: " + currentIndex);
+    // console.log("Current Index: " + currentIndex);
     useEffect(() => {
         const startTimeout = setTimeout(() => {
         setShouldStartTyping(true);
@@ -25,6 +27,13 @@ const TypeWriterJSX = ({ elementData, typeDelay, startDelay }: {
     console.log("Test: " + (shouldStartTyping && currentIndex < elementData.text.length));
 
     useEffect(() => {
+        if (!currentSegment) {
+            if (onComplete) onComplete();
+            return;
+        }
+
+        // else if (currentText.length < currentSegment.text.length)
+
         if (shouldStartTyping && currentIndex < elementData.text.length) {
             const typeTimeout = setTimeout(() => {
                 setCurrentText(prevText => prevText + elementData.text[currentIndex]);
@@ -33,7 +42,7 @@ const TypeWriterJSX = ({ elementData, typeDelay, startDelay }: {
         
             return () => clearTimeout(typeTimeout);
         }
-    }, [currentIndex, elementData.text, typeDelay, shouldStartTyping]);
+    }, [currentSegment, currentText, typeDelay, shouldStartTyping, onComplete]);
 
     return (
         <div>
