@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { EnumType } from "typescript";
 import { Segment, customAnswerElement } from "@/types";
+import {DealsourcingImages, dealsourcing_logos} from "@/app/projects/logos";
 
-const TypeWriterFormatted = ({ elementData, typeDelay, startDelay, onComplete }: {
+const TypeWriterFormatted = ({ elementData, typeDelay, startDelay }: {
     elementData: customAnswerElement;
     typeDelay: number;
     startDelay: number;
-    onComplete: () => void;
 }) => {
     
     const [currentCharIndex, setCurrentCharIndex] = useState(0);
@@ -22,11 +21,6 @@ const TypeWriterFormatted = ({ elementData, typeDelay, startDelay, onComplete }:
     }, [startDelay]);
 
     useEffect(() => {
-        if (!currentSegment) {
-            if (onComplete) onComplete();
-            return;
-        }
-
         if (shouldStartTyping && currentSegmentIndex < elementData.segments.length) {
             const typeTimeout = setTimeout(() => {
                 setCurrentCharIndex(prevCharIndex => {
@@ -41,7 +35,7 @@ const TypeWriterFormatted = ({ elementData, typeDelay, startDelay, onComplete }:
 
             return () => clearTimeout(typeTimeout);
         }
-    }, [currentSegment, currentCharIndex, typeDelay, shouldStartTyping, onComplete]);
+    }, [currentSegment, currentCharIndex, typeDelay, shouldStartTyping]);
 
     return (
         <div>
@@ -56,10 +50,6 @@ const TypeWriterFormatted = ({ elementData, typeDelay, startDelay, onComplete }:
                 }
                 return null;
             })}
-            {/* <ul className="list-item list-outside">
-                <li className="list-item "> &bull; hi</li>
-                <li> hello</li>
-            </ul> */}
         </div>
     );
 };
@@ -73,8 +63,10 @@ const renderSegment = (segment: Segment, index: number) => {
         return <br key={index} />;
     } else if (segment.tag === 'em') {
         return <em key={index}>{segment.text}</em>;
-    } else if (segment.tag === 'ul') { 
+    } else if (segment.tag === 'ul') {
         return <ul key={index}><li>{segment.text}</li></ul>;
+    } else if (segment.tag === 'ds_logos') {
+        return <div key={index}> {dealsourcing_logos} </div>;
     }
     return null;
 };
