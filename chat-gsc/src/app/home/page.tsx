@@ -2,8 +2,10 @@
 import TextBox from '@/components/TextBox';
 import { TypeAnimation } from 'react-type-animation';
 import Home from '../page';
+import { useState } from 'react';
 
-const HomePage = ({}) => {
+const HomePage = ({ }) => {
+  const [buttonEffect, setButtonEffect] = useState(false);
   const sequenceArray = [2000, "What does Griffin do in his time off?", 1000,
     "What kind of computer languages does Griffin know? Give project examples with each.",
     1000,
@@ -28,7 +30,7 @@ const HomePage = ({}) => {
             </div>
           </div>
           <div className='flex-grow'></div> 
-          <TextBox allowQuestions={false}>
+          <TextBox allowQuestions={false} buttonEffect={false} setButtonEffect={setButtonEffect}>
               <TypeAnimation className="w-full bg-slate-100 border-transparent focus:border-transparent focus:ring-0 outline-none text-sm" sequence={sequenceArray ?? []} repeat={Infinity} />
           </TextBox>
         </Home>

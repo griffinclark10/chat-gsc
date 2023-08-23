@@ -1,12 +1,12 @@
 export type customAnswerElement = {
     text: string;
     segments: {
-        tag: 'p' | 'br' | 'h3' | 'em' | 'ul' | '/ul' | 'li' | 'a' | 'img' | 'code' | 'pre';
+        tag: 'p' | 'br' | 'h3' | 'em' | 'ul' | 'ds_logos' | 'i2' | 'i3' | 'ds_images';
         text: string;
     }[]
 }
 
 export type Segment = {
-    tag: 'p' | 'h3' | 'br' | 'em' | 'ul' | '/ul' | 'li' | 'a' | 'img' | 'code' | 'pre';
+    tag: 'p' | 'br' | 'h3' | 'em' | 'ul' | 'ds_logos' | 'i2' | 'i3' | 'ds_images';
     text: string;
 };

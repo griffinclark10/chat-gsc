@@ -62,9 +62,9 @@ const Typewriter = ({ text, startDelay = 0, typeDelay, newText, setQuestionFinis
         }
     }, [currentText])
     
-    return <Remark>{currentText}</Remark>
+    // return <Remark>{currentText}</Remark>
     
-    // return <span className='text-sm'>{currentText}</span>;
+    return <span className='text-sm'>{currentText}</span>;
 };
   
 

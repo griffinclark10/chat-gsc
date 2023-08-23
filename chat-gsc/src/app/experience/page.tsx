@@ -4,13 +4,10 @@ import TextBox from "@/components/TextBox"
 import Typewriter from "@/components/TypeWriter"
 import TypeWriterFormatted from "@/components/TypeWriterFormatted";
 import { customAnswerElement } from "@/types";
-import { type } from "os";
 import { useState } from "react";
-import Home from "../page"
-import { text } from "stream/consumers";
+import Home from "../page";
 
 const question = "Tell me about some of Griffin's relevant experience!";
-
 const customAnswer: customAnswerElement = {
         text: "Of course! Here is a list of Griffin's relevant professional experience.Dealsourcing - Full Stack Engineer",
         segments: [
@@ -63,17 +60,12 @@ const Experience = () => {
     const [questionFinished, setQuestionFinished] = useState(false);
     const [questionPosted, setQuestionPosted] = useState(false);
     const [buttonEffect, setButtonEffect] = useState(false);
-    const [activeTypewriterIndex, setActiveTypewriterIndex] = useState(0);
-
-    const handleTypingComplete = () => {
-        setActiveTypewriterIndex(prev => prev + 1);
-    }
 
     return (
         <Home>
             <Response questionFinished={questionFinished} questionPosted={questionPosted}
                 setQuestionPosted={setQuestionPosted} question={question}>
-                <TypeWriterFormatted elementData={customAnswer} typeDelay={5} startDelay={5000} onComplete={handleTypingComplete}/>
+                <TypeWriterFormatted elementData={customAnswer} typeDelay={5} startDelay={5000}/>
             </Response>
             <div className='flex-grow'></div>
             <TextBox allowQuestions={false} buttonEffect={buttonEffect} setButtonEffect={setButtonEffect}>
