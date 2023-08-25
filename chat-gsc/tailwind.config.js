@@ -17,10 +17,16 @@ module.exports = {
           "0%, 100%": { transform: "scale(1) rotate(-5deg)" },
           "50%": {transform: "scale(1.1) rotate(-5deg)"},
           "25%, 75%": { transform: "scale(1.1) rotate(5deg)" }
+        },
+        longWiggle: {
+          "0%, 100%": { transform: "scale(1) rotate(-5deg)" },
+          "50%": {transform: "scale(1.2) rotate(-5deg)"},
+          "25%, 75%": { transform: "scale(1.1) rotate(5deg)" }
         }
       },
       animation: {
-        wiggle: "wiggle 300ms ease-in-out"
+        wiggle: "wiggle 300ms ease-in-out",
+        longWiggle: "longWiggle 500ms ease-in-out"
       },
     },
   },

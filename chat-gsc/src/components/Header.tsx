@@ -1,8 +1,10 @@
 import { faClipboard, faCopy } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { usePathname } from "next/navigation";
 import { MouseEventHandler } from "react";
 
-const Header = (props: { onClick: MouseEventHandler<HTMLAnchorElement> | undefined; showing: boolean}) => {
+const Header = (props: { onClick: MouseEventHandler<HTMLAnchorElement> | undefined; showing: boolean }) => {
+    const path = usePathname();
     return (
         <header className={`flex bg-amber-200 text-yellow-700 flex-row transition-all duration-1000 ${props.showing ? " h-16 p-2" : "h-0 overflow-hidden"}`}>
             <span className="ml-5" data-state="closed">
@@ -14,7 +16,9 @@ const Header = (props: { onClick: MouseEventHandler<HTMLAnchorElement> | undefin
                     </a>
             </span>
             <div className="flex-grow"></div>
-            <span className="mt-3 text-lg font-semibold">TITLE</span>
+            <span className="mt-3 text-lg font-semibold">{
+                path === "/home" ? "Home" : null || path === "/about" ? "About Me" : null || path === "/experience" ? "Experience" : null || path === "/projects" ? "Projects" : null
+            }</span>
             <div className="flex-grow"></div>
             <span className="mr-5" data-state="closed">
                     <a className="flex p-3 gap-3 transition-colors duration-200 cursor-pointer rounded-md hover:bg-yellow-700 hover:text-amber-200 h-11 w-11 flex-shrink-0 items-center justify-center">
