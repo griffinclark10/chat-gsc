@@ -3,6 +3,7 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faFilePdf } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MouseEventHandler } from "react";
+import Button from "./Button";
 
 const Sidebar = (props: { onClick: MouseEventHandler<HTMLAnchorElement>; hidden: boolean }) => {
     return (
@@ -29,26 +30,10 @@ const Sidebar = (props: { onClick: MouseEventHandler<HTMLAnchorElement>; hidden:
             </ul>
             <div className="flex-grow" />
             <div className="mb-1 flex flex-row gap-3 justify-center">
-                <span className="" data-state="closed">
-                    <a href="https://github.com/griffinclark10" className="flex p-3 gap-3 transition-colors duration-200 text-white cursor-pointer text-sm rounded-md border border-white/20 hover:bg-gray-500/10 h-11 w-11 flex-shrink-0 items-center justify-center">
-                        <FontAwesomeIcon icon={faGithub}/>
-                    </a>
-                </span>
-                <span className="" data-state="closed">
-                    <a href="https://www.linkedin.com/in/griffin-clark-a02513146/" className="flex p-3 gap-3 transition-colors duration-200 text-white cursor-pointer text-sm rounded-md border border-white/20 hover:bg-gray-500/10 h-11 w-11 flex-shrink-0 items-center justify-center">
-                        <FontAwesomeIcon icon={faLinkedin}/>
-                    </a>
-                </span>
-                <span className="" data-state="closed">
-                        <a href="mailto:griffinclark10@gmail.com" className="flex p-3 gap-3 transition-colors duration-200 text-white cursor-pointer text-sm rounded-md border border-white/20 hover:bg-gray-500/10 h-11 w-11 flex-shrink-0 items-center justify-center">
-                        <FontAwesomeIcon icon={faEnvelope}/>
-                        </a>
-                </span>
-                <span className="" data-state="closed">
-                    <a href="#" className="flex p-3 gap-4 transition-colors duration-200 text-white cursor-pointer text-sm rounded-md border border-white/20 hover:bg-gray-500/10 h-11 w-11 flex-shrink-0 items-center justify-center">
-                        <FontAwesomeIcon icon={faFilePdf}/>
-                    </a>
-                </span>
+                <Button icon={faGithub} textColor="white" hoverBgColor="gray-500/10" link="https://github.com/griffinclark10" height={11}/>
+                <Button icon={faLinkedin} textColor="white" hoverBgColor="gray-500/10" link="https://www.linkedin.com/in/griffin-clark-a02513146/" height={11} />
+                <Button icon={faEnvelope} textColor="white" hoverBgColor="gray-500/10" link="mailto:griffinclark10@gmail.com" height={11} />
+                <Button icon={faFilePdf} textColor="white" hoverBgColor="gray-500/10" link="#" height={11} />
             </div>  
         </div>
     );
