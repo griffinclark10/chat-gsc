@@ -3,9 +3,11 @@ import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import { useCallback, useState } from "react";
 
-export default function Home({children,}:{children: React.ReactNode}) {
+export default function Home({ children, }: { children: React.ReactNode }) {
+  
   const [hideSidebar, setHideSidebar] = useState<boolean>(false);
   const toggleSidebar = useCallback(() => setHideSidebar(value => !value), []);
+
   return (
     <div className="flex h-screen w-screen">
       <Sidebar hidden={hideSidebar} onClick={toggleSidebar}/>

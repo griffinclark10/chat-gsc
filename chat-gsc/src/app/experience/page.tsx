@@ -65,14 +65,14 @@ const Experience = () => {
         <Home>
             <Response questionFinished={questionFinished} questionPosted={questionPosted}
                 setQuestionPosted={setQuestionPosted} question={question}>
-                <TypeWriterFormatted elementData={customAnswer} typeDelay={5} startDelay={5000}/>
+                <TypeWriterFormatted elementData={customAnswer} typeDelay={5} startDelay={5000} />
             </Response>
             <div className='flex-grow'></div>
             <TextBox allowQuestions={false} buttonEffect={buttonEffect} setButtonEffect={setButtonEffect}>
-                <Typewriter text={question} typeDelay={20} startDelay={1000} setButtonEffect={setButtonEffect} setQuestionFinished={setQuestionFinished}/> 
+                <Typewriter text={question} typeDelay={20} startDelay={1000} setButtonEffect={setButtonEffect} setQuestionFinished={setQuestionFinished} />
             </TextBox>
         </Home>
-    )
-}
+    );
+};
 
-export default Experience
+export default Experience;
