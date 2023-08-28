@@ -7,7 +7,6 @@ import { useState } from "react";
 const SidebarElement = ({ text, href }: { text: string;  href: string}) => {
     const path = usePathname();
     const [isHovering, setIsHovering] = useState(false);
-    console.log(isHovering);
     return (
         <li>
             <Link href={href} className={`flex items-center p-2 text-gray-100 rounded-lg dark:text-white hover:bg-teal-800 ${path == href ? "bg-teal-800" : null} dark:hover:bg-gray-700 group`} onMouseEnter={() => setIsHovering(true)} onMouseOut={() => setIsHovering(false)}>
