@@ -23,7 +23,7 @@ const Sidebar = (props: { onClick: MouseEventHandler<HTMLAnchorElement>; hidden:
                 <h3 className="h-9 pb-2 pt-3 px-3 text-xs text-gray-500 font-medium text-ellipsis overflow-hidden break-all">Pages</h3>
             </div>
             <ul className="space-y-2 font-medium">
-                <SidebarElement text="Home" href="/home" />
+                <SidebarElement text="Home" href="/" />
                 <SidebarElement text="About Me" href="/about" />
                 <SidebarElement text="Experience" href="/experience" />
                 <SidebarElement text="Projects" href="/projects" />

@@ -3,7 +3,7 @@ import Response from "@/components/Response";
 import TextBox from "@/components/TextBox"
 import Typewriter from "@/components/TypeWriter"
 import React, { useState } from "react";
-import Home from "../page"
+import Home from "../home/page";
 import TypeWriterFormatted from "@/components/TypeWriterFormatted";
 import { customAnswerElement } from "@/types";
 

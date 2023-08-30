@@ -5,7 +5,7 @@ import Typewriter from "@/components/TypeWriter"
 import TypeWriterFormatted from "@/components/TypeWriterFormatted";
 import { customAnswerElement } from "@/types";
 import { useState } from "react";
-import Home from "../page";
+import Home from "../home/page";
 
 const question = "Tell me about some of Griffin's relevant experience!";
 const customAnswer: customAnswerElement = {
