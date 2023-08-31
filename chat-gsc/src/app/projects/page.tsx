@@ -2,7 +2,7 @@
 import Response from "@/components/Response";
 import TextBox from "@/components/TextBox"
 import Typewriter from "@/components/TypeWriter"
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Home from "../home/page";
 import TypeWriterFormatted from "@/components/TypeWriterFormatted";
 import { customAnswerElement } from "@/types";
@@ -97,13 +97,7 @@ const Projects = () => {
     const [questionFinished, setQuestionFinished] = useState(false);
     const [questionPosted, setQuestionPosted] = useState(false);
     const [buttonEffect, setButtonEffect] = useState(false);
-
-    // const scrollRef = React.useRef<null | HTMLDivElement>(null);
-    // React.useEffect(() => {
-    //     if (scrollRef.current) {
-    //         scrollRef.current.scrollIntoView({ block: 'end', behavior: 'smooth' });
-    //     }
-    // }, [questionFinished, ]);
+    
     return (
         <Home>
             <Response questionFinished={questionFinished} question={question} questionPosted={questionPosted} setQuestionPosted={setQuestionPosted}>

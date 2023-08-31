@@ -1,7 +1,7 @@
 'use client';
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
-import { useCallback, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 
 export default function Home({ children, }: { children: React.ReactNode }) {
   

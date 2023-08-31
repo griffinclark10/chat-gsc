@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { createRef, useEffect, useRef, useState } from "react";
 import { Segment, customAnswerElement } from "@/types";
 import {DealsourcingImages, QHImages, dealsourcing_logos, qh_logos, thesis_logos, ThesisImages, tweet_logos, hh_logos, pp_logos, cp_logos} from "@/app/projects/segmentElements";
 import Button from "./Button";
@@ -13,7 +13,25 @@ const TypeWriterFormatted = ({ elementData, typeDelay, startDelay }: {
     const [currentCharIndex, setCurrentCharIndex] = useState(0);
     const [currentSegmentIndex, setCurrentSegmentIndex] = useState(0);
     const [shouldStartTyping, setShouldStartTyping] = useState(false);
+    const [scrollIndex, setScrollIndex] = useState(0);
     const currentSegment = elementData.segments[currentSegmentIndex];
+    const scrollRef = useRef<null | HTMLDivElement>(null);
+    
+    useEffect(() => {
+        function incrementScrollIndex() {
+          if (scrollIndex < 1000) {
+            setScrollIndex(prevIndex => prevIndex + 1);
+            setTimeout(incrementScrollIndex, 1000);
+          }
+        }
+        incrementScrollIndex();
+    }, []);
+
+    useEffect(() => {
+        if (scrollRef.current && scrollRef.current.scrollTop !== scrollRef.current.scrollHeight) {
+          scrollRef.current.scrollIntoView({ block: 'end', behavior: 'smooth' });
+        }
+      }, [scrollIndex]);
 
     useEffect(() => {
         const startTimeout = setTimeout(() => {
@@ -40,19 +58,22 @@ const TypeWriterFormatted = ({ elementData, typeDelay, startDelay }: {
     }, [currentSegment, currentCharIndex, typeDelay, shouldStartTyping]);
 
     return (
-        <div>
-            {elementData.segments.map((segment, index) => {
-                if (index < currentSegmentIndex) {
-                    return renderSegment(segment, index);
-                } else if (index === currentSegmentIndex) {
-                    return renderSegment({
-                        ...segment,
-                        text: segment.text.substring(0, currentCharIndex)
-                    }, index);
-                }
-                return null;
-            })}
-        </div>
+        <>
+            <div ref={scrollRef}>
+                {elementData.segments.map((segment, index) => {
+                    if (index < currentSegmentIndex) {
+                        return renderSegment(segment, index);
+                    } else if (index === currentSegmentIndex) {
+                        return renderSegment({
+                            ...segment,
+                            text: segment.text.substring(0, currentCharIndex)
+                        }, index);
+                    }
+                    return null;
+                })}
+            </div>
+            <div ref={scrollRef} className="h-10"></div>
+        </>
     );
 };
 
