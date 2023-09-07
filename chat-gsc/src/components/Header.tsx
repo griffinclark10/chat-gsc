@@ -17,7 +17,7 @@ const Header = (props: { onClick: MouseEventHandler<HTMLAnchorElement> | undefin
             </span>
             <div className="flex-grow"></div>
             <span className="mt-3 text-lg font-semibold">{
-                path === "/home" ? "Home" : null || path === "/about" ? "About Me" : null || path === "/experience" ? "Experience" : null || path === "/projects" ? "Projects" : null
+                path === "/" ? "Home" : null || path === "/about" ? "About Me" : null || path === "/experience" ? "Experience" : null || path === "/projects" ? "Projects" : null
             }</span>
             <div className="flex-grow"></div>
             <span className="mr-5" data-state="closed">
