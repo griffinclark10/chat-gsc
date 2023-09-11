@@ -72,8 +72,6 @@ const Response = ({ question, questionFinished, children, questionPosted, setQue
                 </div>
                 <div className="mr-36 mt-10 mb-10 flex flex-col items-center text-sm">
                     {children}
-                    {}
-                    {/* {childrenWithProps} */}
                 </div>
             </div>
         </div>

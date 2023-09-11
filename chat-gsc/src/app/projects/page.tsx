@@ -101,7 +101,7 @@ const Projects = () => {
     return (
         <Home>
             <Response questionFinished={questionFinished} question={question} questionPosted={questionPosted} setQuestionPosted={setQuestionPosted}>
-                <TypeWriterFormatted elementData={customAnswer} typeDelay={5} startDelay={5000} />
+                <TypeWriterFormatted elementData={customAnswer} typeDelay={5} startDelay={5000} scrollTimeout={50000} />
             </Response>
             <div className='flex-grow'></div>
             <TextBox allowQuestions={false} buttonEffect={buttonEffect} setButtonEffect={setButtonEffect}>

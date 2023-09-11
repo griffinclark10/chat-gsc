@@ -4,10 +4,11 @@ import {DealsourcingImages, QHImages, dealsourcing_logos, qh_logos, thesis_logos
 import Button from "./Button";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
-const TypeWriterFormatted = ({ elementData, typeDelay, startDelay }: {
+const TypeWriterFormatted = ({ elementData, typeDelay, startDelay, scrollTimeout }: {
     elementData: customAnswerElement;
     typeDelay: number;
     startDelay: number;
+    scrollTimeout: number;
 }) => {
 
     const [currentCharIndex, setCurrentCharIndex] = useState(0);
@@ -16,7 +17,9 @@ const TypeWriterFormatted = ({ elementData, typeDelay, startDelay }: {
     const [scrollIndex, setScrollIndex] = useState(0);
     const currentSegment = elementData.segments[currentSegmentIndex];
     const scrollRef = useRef<null | HTMLDivElement>(null);
+    const [shouldStopScrolling, setShouldStopScrolling] = useState(false);
     
+    //used as timed scroll check (every 1000 ms)
     useEffect(() => {
         function incrementScrollIndex() {
           if (scrollIndex < 1000) {
@@ -27,12 +30,26 @@ const TypeWriterFormatted = ({ elementData, typeDelay, startDelay }: {
         incrementScrollIndex();
     }, []);
 
+    //handle when to stop scrolling
     useEffect(() => {
-        if (scrollRef.current && scrollRef.current.scrollTop !== scrollRef.current.scrollHeight) {
-          scrollRef.current.scrollIntoView({ block: 'end', behavior: 'smooth' });
-        }
-      }, [scrollIndex]);
+        const timeoutId = setTimeout(() => {
+            setShouldStopScrolling(true);
+        }, scrollTimeout);
+    
+        return () => {
+            clearTimeout(timeoutId);
+        };
+    }, [scrollTimeout]);
 
+    // handle the scrolling effect
+    useEffect(() => {
+        if (!shouldStopScrolling && scrollRef.current && scrollRef.current.scrollTop !== scrollRef.current.scrollHeight) {
+            scrollRef.current.scrollIntoView({ block: 'end', behavior: 'smooth' });
+        }
+    }, [scrollIndex, shouldStopScrolling]);
+    
+
+    // start typing after startDelay
     useEffect(() => {
         const startTimeout = setTimeout(() => {
             setShouldStartTyping(true);
@@ -40,6 +57,7 @@ const TypeWriterFormatted = ({ elementData, typeDelay, startDelay }: {
         return () => clearTimeout(startTimeout);
     }, [startDelay]);
 
+    // type next character after typeDelay
     useEffect(() => {
         if (shouldStartTyping && currentSegmentIndex < elementData.segments.length) {
             const typeTimeout = setTimeout(() => {
