@@ -12,10 +12,10 @@ export default function Home({ children, }: { children: React.ReactNode }) {
   const toggleSidebar = useCallback(() => setHideSidebar(value => !value), []);
 
   return (
-    <div className="flex h-screen w-full ">
+    <div className={`flex h-screen w-full `}>
       <Sidebar hidden={hideSidebar} onClick={toggleSidebar} isMobile={isMobile} />
-      <main className={`flex flex-col w-full h-screen bg-gray-50 ${!hideSidebar && isMobile ? "hidden" : null} `}>
-        <Header showing={hideSidebar} onClick={toggleSidebar} />
+      <main className={`flex flex-col w-full h-screen bg-gray-50 ${!hideSidebar && isMobile ? "animate-hideAfterDelay" : null} ${hideSidebar && isMobile ? "animate-openMainSlowly" : null}`}>
+        <Header showing={hideSidebar} onClick={toggleSidebar} isMobile={isMobile}/>
         {children}
       </main>
     </div>

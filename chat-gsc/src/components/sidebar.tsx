@@ -5,7 +5,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MouseEventHandler } from "react";
 import Button from "./Button";
 
-const Sidebar = (props: { onClick: MouseEventHandler<HTMLAnchorElement>; hidden: boolean }) => {
+const Sidebar = (props: { onClick: MouseEventHandler<HTMLAnchorElement>; hidden: boolean; isMobile: boolean }) => {
+    let buttonHeight = 11;
+    if (props.isMobile) {
+        buttonHeight = 24;
+    }
     return (
         <div className={`flex flex-col ${props.hidden ? 'w-0 overflow-auto' : 'w-full md:w-[300px] px-3 py-4'} md:z-0 h-screen md:overflow-y-auto bg-teal-900 dark:bg-gray-800 transition-all duration-1000`}>
             <div className="mb-1 flex flex-row gap-2">
@@ -30,10 +34,10 @@ const Sidebar = (props: { onClick: MouseEventHandler<HTMLAnchorElement>; hidden:
             </ul>
             <div className="flex-grow" />
             <div className="mb-1 flex flex-row gap-3 justify-center">
-                <Button icon={faGithub} textColor="white" hoverBgColor="gray-500/10" link="https://github.com/griffinclark10" height={11}/>
-                <Button icon={faLinkedin} textColor="white" hoverBgColor="gray-500/10" link="https://www.linkedin.com/in/griffin-clark-a02513146/" height={11} />
-                <Button icon={faEnvelope} textColor="white" hoverBgColor="gray-500/10" link="mailto:griffinclark10@gmail.com" height={11} />
-                <Button icon={faFilePdf} textColor="white" hoverBgColor="gray-500/10" link="#" height={11} />
+                <Button icon={faGithub} textColor="white" hoverBgColor="gray-500/10" link="https://github.com/griffinclark10" height={buttonHeight}/>
+                <Button icon={faLinkedin} textColor="white" hoverBgColor="gray-500/10" link="https://www.linkedin.com/in/griffin-clark-a02513146/" height={buttonHeight} />
+                <Button icon={faEnvelope} textColor="white" hoverBgColor="gray-500/10" link="mailto:griffinclark10@gmail.com" height={buttonHeight} />
+                <Button icon={faFilePdf} textColor="white" hoverBgColor="gray-500/10" link="#" height={buttonHeight} />
             </div>  
         </div>
     );

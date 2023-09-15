@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { usePathname } from "next/navigation";
 import { MouseEventHandler } from "react";
 
-const Header = (props: { onClick: MouseEventHandler<HTMLAnchorElement> | undefined; showing: boolean }) => {
+const Header = (props: { onClick: MouseEventHandler<HTMLAnchorElement> | undefined; showing: boolean; isMobile: boolean; }) => {
     const path = usePathname();
     return (
         <header className={`flex bg-amber-200 text-yellow-700 flex-row transition-all duration-1000 ${props.showing ? " h-16 p-2" : "h-0 overflow-hidden"}`}>
