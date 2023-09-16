@@ -5,9 +5,10 @@ import { useCallback, useRef, useState } from "react";
 
 export default function Home({ children, }: { children: React.ReactNode }) {
   let isMobile = false;
-  if(screen.width < 960){
+  if(screen.width < 600){
     isMobile = true;
   }
+  
   const [hideSidebar, setHideSidebar] = useState<boolean>(isMobile);
   const toggleSidebar = useCallback(() => setHideSidebar(value => !value), []);
 
