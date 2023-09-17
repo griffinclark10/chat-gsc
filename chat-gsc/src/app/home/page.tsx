@@ -8,14 +8,14 @@ export default function Home({ children, }: { children: React.ReactNode }) {
   if(screen.width < 600){
     isMobile = true;
   }
-  
+
   const [hideSidebar, setHideSidebar] = useState<boolean>(isMobile);
   const toggleSidebar = useCallback(() => setHideSidebar(value => !value), []);
 
   return (
     <div className={`flex h-screen w-full `}>
       <Sidebar hidden={hideSidebar} onClick={toggleSidebar} isMobile={isMobile} />
-      <main className={`flex flex-col w-full h-screen bg-gray-50 ${!hideSidebar && isMobile ? "animate-hideAfterDelay" : null} ${hideSidebar && isMobile ? "animate-openMainSlowly" : null}`}>
+      <main className={`flex flex-col w-full h-screen bg-gray-50 ${!hideSidebar && isMobile ? "animate-hideSidebar" : null} ${hideSidebar && isMobile ? "animate-openMainSlowly" : null}`}>
         <Header showing={hideSidebar} onClick={toggleSidebar} isMobile={isMobile}/>
         {children}
       </main>
