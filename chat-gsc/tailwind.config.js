@@ -1,4 +1,24 @@
 /** @type {import('tailwindcss').Config} */
+
+function generateButtonAnimations(distance) {
+  return {
+    [`buttonOpen${distance/42}`]: {
+      "0%": { opacity: "0", transform: `translateX(${distance}px)` },
+      "100%": { opacity: "1", transform: "translateX(0px)" }
+    },
+    [`buttonClose${distance/42}`]: {
+      "0%": { opacity: "1", transform: "translateX(0px)" },
+      "100%": { opacity: "0", transform: `translateX(${distance}px)` }
+    },
+  };
+}
+function generateButtonAnimationConfig(distance) {
+  return {
+    [`buttonOpen${distance/42}`]: `buttonOpen${distance/42} 0.5s ease-in-out forwards`,
+    [`buttonClose${distance/42}`]: `buttonClose${distance/42} 0.5s ease-in-out forwards`,
+  };
+}
+
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -59,22 +79,10 @@ module.exports = {
           "75%": { opacity: "0.75", transform: "rotateX(45deg)" },
           "100%": { opacity: "1", transform: "rotateX(0deg)" }
         },
-        buttonOpen1: {
-          "0%": { opacity: "0", display: "none", transform: "translateX(42px)" },
-          "100%": { opacity: "1", display: "block", transform: "translateX(0px)" }
-        },
-        buttonClose1: {
-          "0%": { opacity: "1", display: "block", transform: "translateX(0px)" },
-          "100%": { opacity: "0", display: "none", transform: "translateX(42px)" }
-        },
-        buttonOpen2: {
-          "0%": { opacity: "0", display: "none", transform: "translateX(84px)" },
-          "100%": { opacity: "1", display: "block", transform: "translateX(0px)" }
-        },
-        buttonClose2: {
-          "0%": { opacity: "1", display: "block", transform: "translateX(0px)" },
-          "100%": { opacity: "0", display: "none", transform: "translateX(84px)" }
-        },
+        ...generateButtonAnimations(42),
+        ...generateButtonAnimations(84),
+        ...generateButtonAnimations(126),
+        ...generateButtonAnimations(168),
       },
       animation: {
         wiggle: "wiggle 300ms ease-in-out",
@@ -86,10 +94,10 @@ module.exports = {
         titleFadeIn: "fadeIn 0.25s ease-in-out forwards",
         titleFadeOut: "fadeOut 0.25s ease-in-out forwards",
 
-        buttonOpen1: "buttonOpen1 1s ease-in-out forwards",
-        buttonClose1: "buttonClose1 1s ease-in-out forwards",
-        buttonOpen2: "buttonOpen2 0.5s ease-in-out forwards",
-        buttonClose2: "buttonClose2 0.5s ease-in-out forwards",
+        ...generateButtonAnimationConfig(42),
+        ...generateButtonAnimationConfig(84),
+        ...generateButtonAnimationConfig(126),
+        ...generateButtonAnimationConfig(168),
       },
     },
   },
