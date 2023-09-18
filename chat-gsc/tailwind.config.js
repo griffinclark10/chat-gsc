@@ -4,10 +4,14 @@ function generateButtonAnimations(distance) {
   return {
     [`buttonOpen${distance/42}`]: {
       "0%": { opacity: "0", transform: `translateX(${distance}px)` },
+      "60%": { opacity: "1", transform: `translateX(${-distance/42 * 7}px)` },
+      // "60%": { opacity: "1", transform: `translateX(${distance/2}px)` },
+      // "95%": { opacity: "1", transform: `translateX(-3px)` },
       "100%": { opacity: "1", transform: "translateX(0px)" }
     },
     [`buttonClose${distance/42}`]: {
       "0%": { opacity: "1", transform: "translateX(0px)" },
+      "40%": { opacity: "1", transform: `translateX(-${distance/42 * 7}px)` },
       "100%": { opacity: "0", transform: `translateX(${distance}px)` }
     },
   };
@@ -35,6 +39,7 @@ module.exports = {
       keyframes: {
         fadeIn: {
           "0%": { opacity: "0", display: "none", visibility: "hidden" },
+          "90%": { opacity: "0", display: "none", visibility: "visible" },
           "100%": { opacity: "1", display: "visible", visibility: "visible" }
         },
         fadeOut: {
@@ -91,7 +96,7 @@ module.exports = {
         openMainSlowly: "openMain 0.7s ease-in-out",
         tableOpen: "tableOpen 0.5s ease-in-out forwards",
         tableClose: "tableClose 0.5s ease-in-out forwards",
-        titleFadeIn: "fadeIn 0.25s ease-in-out forwards",
+        titleFadeIn: "fadeIn 0.4s ease-in-out forwards",
         titleFadeOut: "fadeOut 0.25s ease-in-out forwards",
 
         ...generateButtonAnimationConfig(42),
