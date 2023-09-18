@@ -1,8 +1,7 @@
+import "./components.css";
 import { createRef, useEffect, useRef, useState } from "react";
 import { Segment, customAnswerElement } from "@/types";
 import {DealsourcingImages, QHImages, dealsourcing_logos, qh_logos, thesis_logos, ThesisImages, tweet_logos, hh_logos, pp_logos, cp_logos} from "@/app/projects/segmentElements";
-import Button from "./Button";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const TypeWriterFormatted = ({ elementData, typeDelay, startDelay, scrollTimeout }: {
     elementData: customAnswerElement;
@@ -100,7 +99,7 @@ const renderSegment = (segment: Segment, index: number) => {
         case 'p':
             return <p key={index}>{segment.text}</p>;
         case 'h3':
-            return <strong className="text-base" key={index}>{segment.text}</strong>;
+            return <a href={segment.href} key={index}><strong className="text-base projects-title" key={index}>{segment.text}</strong></a>;
         case 'br':
             return <br key={index} />;
         case 'em':
@@ -127,8 +126,6 @@ const renderSegment = (segment: Segment, index: number) => {
             return <div key={index}> {pp_logos} </div>;
         case 'cp_logos': 
             return <div key={index}> {cp_logos} </div>;
-        case 'github1':
-            return <div key={index}> {<Button icon={faGithub} textColor="white" hoverBgColor="white" link="" height={8} hoverTextColor="black" bgColor="black"/>} </div>;
         default:
             return null;
     }

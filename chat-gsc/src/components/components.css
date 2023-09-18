@@ -1,0 +1,20 @@
+.projects-title {
+    position: relative;
+    display: inline-block;
+  }
+
+  .projects-title::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: currentColor;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .projects-title:hover::after {
+    width: 100%;
+  }

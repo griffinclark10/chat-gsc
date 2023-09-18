@@ -2,19 +2,18 @@
 import Response from "@/components/Response";
 import TextBox from "@/components/TextBox"
 import Typewriter from "@/components/TypeWriter"
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import Home from "../home/page";
 import TypeWriterFormatted from "@/components/TypeWriterFormatted";
 import { customAnswerElement } from "@/types";
 
 const question: string = "Show me some of the projects Griffin has worked on!";
 const customAnswer: customAnswerElement = {
-    text: "Of course! Here is a list of Griffin's relevant projects.",
     segments: [
         { tag: 'p', text: "Of course! Here is a list of Griffin's relevant projects." },
         { tag: 'br', text: '' },
 
-        { tag: 'h3', text: "Dealsourcing" },
+        { tag: 'h3', text: "Dealsourcing", href: "https://www.dealsourcing.co"},
         { tag: 'br', text: '' },
         { tag: 'em', text: "Lead Engineer (Full Stack)" },
         { tag: 'br', text: '' },
@@ -28,7 +27,7 @@ const customAnswer: customAnswerElement = {
         { tag: 'ds_images', text: '' },
         { tag: 'br', text: '' },
 
-        { tag: 'h3', text: "QueueHop" },
+        { tag: 'h3', text: "QueueHop", href:"https://github.com/Jonah1234567/QueueHop"},
         { tag: 'br', text: '' },
         { tag: 'em', text: "Lead App Developper / AI Engineer" },
         { tag: 'br', text: '' },
@@ -42,7 +41,7 @@ const customAnswer: customAnswerElement = {
         { tag: 'qh_images', text: '' },
         { tag: 'br', text: '' },
 
-        { tag: 'h3', text: "Cooperative Perception for Autonomous Vehicles" },
+        { tag: 'h3', text: "Cooperative Perception for Autonomous Vehicles", href:"./documents/ENPH455FinalReport.pdf" },
         { tag: 'br', text: '' },
         { tag: 'em', text: "AI Research Student" },
         { tag: 'br', text: '' },
@@ -56,7 +55,7 @@ const customAnswer: customAnswerElement = {
         { tag: 'thesis_images', text: '' },
         { tag: 'br', text: '' },
 
-        { tag: 'h3', text: "A-Tweet-A-Stock" },
+        { tag: 'h3', text: "A-Tweet-A-Stock",  href:"https://github.com/griffinclark10/QMIND_TweetStock"},
         { tag: 'br', text: '' },
         { tag: 'em', text: "AI/ML Engineer" },
         { tag: 'br', text: '' },
@@ -66,7 +65,7 @@ const customAnswer: customAnswerElement = {
         { tag: 'p', text: "To amass the necessary data reservoir, Griffin adeptly utilized Python's Scrapy, extracting a vast repository of historical tweets that centered around Tesla. These tweets were then subjected to rigorous sentiment analysis using PyTorch, which assigned them a sentiment score on a continuum from 0 to 1. Harnessing this sentiment-graded dataset, Griffin and his team trained both KNN and RFF models, aiming to predict the likely directional shift (be it positive or negative) of the stock at market's opening bell. The results were striking; across 18 days of real-time evaluation, the models demonstrated an 82% accuracy rate. Griffin's meticulous efforts throughout the semester culminated in a presentation of their research at the esteemed Canadian Undergraduate Conference on AI." },
         { tag: 'br', text: ''},
 
-        { tag: 'h3', text: "Helping Hand" },
+        { tag: 'h3', text: "Helping Hand", href:"./documents/HelpingHand.pdf"},
         { tag: 'br', text: '' },
         { tag: 'em', text: "AI/ML Engineer" },
         { tag: 'br', text: '' },
@@ -76,7 +75,7 @@ const customAnswer: customAnswerElement = {
         { tag: 'p', text: "But Griffin didn't stop there. Demonstrating his versatility, he also designed a user interface employing HTML and CSS. This interface harnessed a computer's live feed, enabling it to translate ASL letters in real time. The culmination of Griffin's hard work was a highly efficient model boasting a 93% accuracy rate. Further testament to the project's excellence, the accompanying paper earned the accolade of 'Best Paper' at the Canadian Undergraduate Conference on AI, receiving commendation from esteemed professors and industry experts alike." },
         { tag: 'br', text: '' },
 
-        { tag: 'h3', text: "Previous Portfolio" },
+        { tag: 'h3', text: "Previous Portfolio", href:"https://github.com/griffinclark10/my-portfolio"},
         { tag: 'br', text: '' },
         { tag: 'em', text: "Software Engineer" },
         { tag: 'br', text: '' },
@@ -84,7 +83,7 @@ const customAnswer: customAnswerElement = {
         { tag: 'p', text: "Griffin's previous portfolio was designed using React, HTML5, CSS, and Javascript. It was hosted on a github server, and was designed to be responsive on computers. This was a project to ameliorate Javascript and React skills through a cyberpunk inspired website." },
         { tag: 'br', text: '' },
 
-        { tag: 'h3', text: "Current Portfolio" },
+        { tag: 'h3', text: "Current Portfolio", href:"https://github.com/griffinclark10/chat-gsc/tree/main/chat-gsc" },
         { tag: 'br', text: '' },
         { tag: 'em', text: "Software Engineer" },
         { tag: 'br', text: '' },

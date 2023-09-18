@@ -8,7 +8,6 @@ import queuehop2 from './images/queuehop2.png';
 import queuehop3 from './images/queuehop3.png';
 import thesis1 from './images/thesis1.png';
 import thesis2 from './images/thesis2.png';
-import { Url } from "next/dist/shared/lib/router/router";
 
 export const dealsourcing_logos =
     <p className="inline"><FontAwesomeIcon icon={faPhp} color={'#AEB2D5'} /> &ensp; <FontAwesomeIcon icon={faPython} color={'#4B8BBE'} /> &ensp;  <FontAwesomeIcon icon={faLaravel} color={'#F05340'} /> &ensp; <FontAwesomeIcon icon={faHtml5} color={'#F16529'} /> &ensp; <FontAwesomeIcon icon={faCss3} color={'#E31B5F'} /> &ensp; <FontAwesomeIcon icon={faAws} color={'#FF9900'} /> &ensp;</p>
