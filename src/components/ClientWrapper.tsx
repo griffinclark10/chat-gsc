@@ -7,18 +7,18 @@ import Header from "./Header";
 export default function ClientWrapper({ children }: {
     children: React.ReactNode;
 }) {
-  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < 768);
+  const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < 768);
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+        setIsMobile(window.innerWidth < 768);
     };
-
     window.addEventListener('resize', handleResize);
-
+    handleResize();
     return () => {
-      window.removeEventListener('resize', handleResize);
+        window.removeEventListener('resize', handleResize);
     };
-  }, []);
+}, []);
+
 
   const [hideSidebar, setHideSidebar] = useState<boolean>(isMobile);
   const toggleSidebar = useCallback(() => setHideSidebar(value => !value), []);
