@@ -1,11 +1,6 @@
-"use client";
-import Response from "@/components/Response";
-import TextBox from "@/components/TextBox"
-import Typewriter from "@/components/TypeWriter"
-import React, { useState } from "react";
-import Home from "../home/page";
-import TypeWriterFormatted from "@/components/TypeWriterFormatted";
+import React from "react";
 import { customAnswerElement } from "@/types";
+import ClientProjects from "./clientProjects";
 
 const question: string = "Show me some of the projects Griffin has worked on!";
 const customAnswer: customAnswerElement = {
@@ -93,21 +88,9 @@ const customAnswer: customAnswerElement = {
     ]
 };
 const Projects = () => {
-    const [questionFinished, setQuestionFinished] = useState(false);
-    const [questionPosted, setQuestionPosted] = useState(false);
-    const [buttonEffect, setButtonEffect] = useState(false);
-    
     return (
-        <Home>
-            <Response questionFinished={questionFinished} question={question} questionPosted={questionPosted} setQuestionPosted={setQuestionPosted}>
-                <TypeWriterFormatted elementData={customAnswer} typeDelay={5} startDelay={5000} scrollTimeout={50000} />
-            </Response>
-            <div className='flex-grow'></div>
-            <TextBox allowQuestions={false} buttonEffect={buttonEffect} setButtonEffect={setButtonEffect}>
-                <Typewriter text={question} typeDelay={20} startDelay={1000} setQuestionFinished={setQuestionFinished} setButtonEffect={setButtonEffect}/> 
-            </TextBox>
-        </Home>
-    )
-}
+        <ClientProjects question={question} customAnswer={customAnswer} />
+    );
+};
 
-export default Projects
+export default Projects;

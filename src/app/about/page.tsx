@@ -1,15 +1,8 @@
-"use client";
-import Response from "@/components/Response"
-import TextBox from "@/components/TextBox"
-import Typewriter from "@/components/TypeWriter"
-import { useState } from "react";
-import Home from "../home/page";
 import { customAnswerElement } from "@/types";
-import TypeWriterFormatted from "@/components/TypeWriterFormatted";
+import ClientAbout from "./clientAbout";
 
 const question = "Tell me a bit about Griffin!"
 const customAnswer: customAnswerElement = {
-    text: "",
     segments: [
         { tag: 'p', text: "Hey! Let me introduce you to Griffin. Born in Denver but raised in Canada, Griffin embodies the unique blend of a love for nature and a passion for technology. Growing up in New Brunswick, Griffin developed a deep appreciation for the intricate dance between the environment and tech, a philosophy that guides their approach as a Software Engineer." },
         { tag: 'br', text: '' },
@@ -26,20 +19,8 @@ const customAnswer: customAnswerElement = {
 }
 
 const AboutMe = ({ }) => {
-    const [questionFinished, setQuestionFinished] = useState<boolean>(false);
-    const [questionPosted, setQuestionPosted] = useState<boolean>(false);
-    const [buttonEffect, setButtonEffect] = useState<boolean>(false);
-    
     return (
-        <Home>
-            <Response questionFinished={questionFinished} question={question} questionPosted={questionPosted} setQuestionPosted={setQuestionPosted}>
-                <TypeWriterFormatted elementData={customAnswer} typeDelay={5} startDelay={5000} scrollTimeout={21000} />
-            </Response>
-            <div className='flex-grow'></div>
-            <TextBox allowQuestions={false} buttonEffect={buttonEffect} setButtonEffect={setButtonEffect}>
-                <Typewriter text={question} typeDelay={20} startDelay={1000} setQuestionFinished={setQuestionFinished} setButtonEffect={setButtonEffect}/> 
-            </TextBox>
-        </Home>
+        <ClientAbout question={question} customAnswer={customAnswer} />
     )
 }
 
