@@ -10,7 +10,6 @@ const Sidebar = (props: { onClick: MouseEventHandler<HTMLAnchorElement>; hidden:
     if (props.isMobile) {
         buttonHeight = 18;
     }
-    console.log(buttonHeight)
 
     const [showAlert, setShowAlert] = useState(false);
     const handleAlert = () => {
@@ -52,7 +51,7 @@ const Sidebar = (props: { onClick: MouseEventHandler<HTMLAnchorElement>; hidden:
                 <Button icon={faGithub} textColor="white" hoverBgColor="gray-500/10" link="https://github.com/griffinclark10" height={buttonHeight}/>
                 <Button icon={faLinkedin} textColor="white" hoverBgColor="gray-500/10" link="https://www.linkedin.com/in/griffin-clark-a02513146/" height={buttonHeight} />
                 <Button icon={faEnvelope} textColor="white" hoverBgColor="gray-500/10" link="mailto:griffinclark10@gmail.com" height={buttonHeight} />
-                <Button icon={faFilePdf} textColor="white" hoverBgColor="gray-500/10" link="#" height={buttonHeight} />
+                <Button icon={faFilePdf} textColor="white" hoverBgColor="gray-500/10" link="./documents/Resume.pdf" height={buttonHeight} />
             </div>  
         </div>
     );
