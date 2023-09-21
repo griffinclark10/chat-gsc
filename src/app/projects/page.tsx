@@ -8,7 +8,7 @@ const customAnswer: customAnswerElement = {
         { tag: 'p', text: "Of course! Here is a list of Griffin's relevant projects." },
         { tag: 'br', text: '' },
 
-        { tag: 'h3', text: "Dealsourcing", href: "https://www.dealsourcing.co"},
+        { tag: 'h3', text: "Dealsourcing", href: "https://dealsourcing.co"},
         { tag: 'br', text: '' },
         { tag: 'em', text: "Lead Engineer (Full Stack)" },
         { tag: 'br', text: '' },

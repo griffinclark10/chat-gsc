@@ -1,4 +1,4 @@
-import "./components.css";
+import "./styles/components.css";
 import { createRef, useEffect, useRef, useState } from "react";
 import { Segment, customAnswerElement } from "@/types";
 import {DealsourcingImages, QHImages, dealsourcing_logos, qh_logos, thesis_logos, ThesisImages, tweet_logos, hh_logos, pp_logos, cp_logos} from "@/app/projects/segmentElements";

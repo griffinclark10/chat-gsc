@@ -16,17 +16,17 @@ const HomePage = ({ }) => {
   return (
     <>
       <div className='flex-grow'></div>
-          <div className="flex items-center justify-center">
-            <div className="flex md:flex-row justify-between mb-4">
-              <h1 className="text-4xl font-semibold text-gray-200 mr-2">ChatGSC</h1>
-              <div className="bg-amber-200 p-1 rounded-md flex justify-center items-center">
-                <p className="text-m font-semibold text-yellow-700">PORTFOLIO</p>
-              </div>
-            </div>
+      <div className="flex items-center justify-center">
+        <div className="flex md:flex-row justify-between mb-4">
+          <h1 className="text-4xl font-semibold text-gray-200 mr-2">ChatGSC</h1>
+          <div className="bg-amber-200 p-1 rounded-md flex justify-center items-center">
+            <p className="text-m font-semibold text-yellow-700">PORTFOLIO</p>
           </div>
-          <div className='flex-grow'></div> 
-          <ClientHomeTA sequenceArray={sequenceArray}/>
-      </>
+        </div>
+      </div>
+      <div className='flex-grow'></div> 
+      <ClientHomeTA sequenceArray={sequenceArray}/>
+    </>
           
     );
 }
