@@ -8,7 +8,7 @@ const customAnswer: customAnswerElement = {
             { tag: 'p', text: "Of course! Here is a list of Griffin's relevant professional experience." },
             { tag: 'br', text: ''},
             { tag: 'br', text: '' },
-            { tag: 'h3', text: "Dealsourcing - Full Stack Engineer", href: "https://dealsourcing.co/" },
+            { tag: 'h3', text: "Dealsourcing - Full Stack Engineer", href: "https://www.dealsourcing.co/" },
             { tag: 'br', text: ''},
             { tag: 'em', text: "Mar 2022 - May 2023, Vancouver, BC" },
             { tag: 'br', text: '' },
