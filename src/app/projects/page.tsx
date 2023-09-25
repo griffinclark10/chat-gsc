@@ -83,7 +83,7 @@ const customAnswer: customAnswerElement = {
         { tag: 'em', text: "Software Engineer" },
         { tag: 'br', text: '' },
         { tag: 'cp_logos', text: '' },
-        { tag: 'p', text: "Griffin's current portfolio was designed using Next.js using Typescript, React and styled with Tailwind CSS. It is also hostel on github. I hope you have enjoyed it :)" },
+        { tag: 'p', text: "Griffin's current portfolio was designed using Next.js using Typescript, React and styled with Tailwind CSS. It is also hosted on github. I hope you have enjoyed it :)" },
         { tag: 'br', text: '' },
     ]
 };
