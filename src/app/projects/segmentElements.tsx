@@ -53,3 +53,5 @@ export const hh_logos = <p className="inline"><FontAwesomeIcon icon={faPython} c
 export const pp_logos = <p> <FontAwesomeIcon icon={faJs} color={'#F0DB4Fw'} /> &ensp;  <FontAwesomeIcon icon={faReact} color={'#61DBFB'} /> &ensp; <FontAwesomeIcon icon={faHtml5} color={'#F16529'} /> &ensp; <FontAwesomeIcon icon={faCss3} color={'#E31B5F'} /> </p>
 
 export const cp_logos = <p className="inline"><FontAwesomeIcon icon={faNode} color={'#3C87CA'} /> &ensp; <FontAwesomeIcon icon={faReact} color={'#61DBFB'} /> &ensp;  <FontAwesomeIcon icon={faJs} color={'#F0DB4Fw'} /> &ensp;</p>
+
+export const lb_logos = <p className="inline"> <FontAwesomeIcon icon={faNode} color={'#3C87CA'} /> &ensp; <FontAwesomeIcon icon={faJs} color={'#F0DB4Fw'} /> &ensp; <FontAwesomeIcon icon={faReact} color={'#61DBFB'} /> &ensp; </p>

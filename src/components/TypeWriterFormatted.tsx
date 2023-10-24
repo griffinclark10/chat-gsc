@@ -1,7 +1,7 @@
 import "./styles/components.css";
 import { createRef, useEffect, useRef, useState } from "react";
 import { Segment, customAnswerElement } from "@/types";
-import {DealsourcingImages, QHImages, dealsourcing_logos, qh_logos, thesis_logos, ThesisImages, tweet_logos, hh_logos, pp_logos, cp_logos} from "@/app/projects/segmentElements";
+import {DealsourcingImages, QHImages, dealsourcing_logos, qh_logos, thesis_logos, ThesisImages, tweet_logos, hh_logos, pp_logos, cp_logos, lb_logos} from "@/app/projects/segmentElements";
 
 const TypeWriterFormatted = ({ elementData, typeDelay, startDelay, scrollTimeout }: {
     elementData: customAnswerElement;
@@ -122,6 +122,8 @@ const renderSegment = (segment: Segment, index: number) => {
             return <div key={index}> {tweet_logos} </div>;
         case 'hh_logos': 
             return <div key={index}> {hh_logos} </div>;
+        case 'lb_logos': 
+            return <div key={index}> {lb_logos} </div>;
         case 'pp_logos':
             return <div key={index}> {pp_logos} </div>;
         case 'cp_logos': 
