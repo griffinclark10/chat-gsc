@@ -8,7 +8,7 @@ const customAnswer: customAnswerElement = {
         { tag: 'p', text: "Of course! Here is a list of Griffin's relevant projects." },
         { tag: 'br', text: '' },
 
-        { tag: 'h3', text: "Life Book (Coming Soon)", href:"./documents/HelpingHand.pdf"},
+        { tag: 'h3', text: "Life Book (Coming Soon)", href:"https://github.com/griffinclark10/life-book"},
         { tag: 'br', text: '' },
         { tag: 'em', text: "Backend Engineer" },
         { tag: 'br', text: '' },
